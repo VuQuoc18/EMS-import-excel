@@ -1,0 +1,40 @@
+<table class="table-container">
+    <tr class="table-header">
+        <th *ngIf="showRowSelection" class="table-cell table-cell-header checkbox-cell">
+            <mat-checkbox [color]="'primary'" (change)="$event ? toggleSelectionAll() : null" [checked]='isSelectedAll'>
+            </mat-checkbox>
+        </th>
+        <th *ngFor="let column of columns" class="table-cell table-cell-header" (click)="toggleSort(column.dataIndex)">
+            <span class="thead-title">
+                {{column.title}}
+                <span class="sort-column"
+                    *ngIf="sortMap.get(column.dataIndex) != null && sortMap.get(column.dataIndex) === 'desc'">
+                    <mat-icon class="opacity-02">north</mat-icon>
+                    <mat-icon>south</mat-icon>
+                </span>
+                <span class="sort-column"
+                    *ngIf="sortMap.get(column.dataIndex) && sortMap.get(column.dataIndex) === 'asc'">
+                    <mat-icon>north</mat-icon>
+                    <mat-icon class="opacity-02">south</mat-icon>
+                </span>
+                <span class="sort-column"
+                    *ngIf="sortMap.get(column.dataIndex) && sortMap.get(column.dataIndex) === 'none'">
+                    <mat-icon class="opacity-02">north</mat-icon>
+                    <mat-icon class="opacity-02">south</mat-icon>
+                </span>
+            </span>
+        </th>
+    </tr>
+    <tr *ngFor="let row of dataSource" class="table-row" (click)="handlerClickRow(row)"
+        [class.selected]="selection.isSelected(row)">
+        <td *ngIf="showRowSelection" class="table-cell table-cell-header">
+            <mat-checkbox [color]="'primary'" (change)="$event ? toggleSelection(row) : null"
+                [checked]="selection.isSelected(row)"></mat-checkbox>
+        </td>
+        <td class="table-cell" *ngFor="let column of columns">
+            <div class="table-cell-entry" #tableCellMatTooltip>
+                {{(row[column.dataIndex] !== null) ? row[column.dataIndex]: ""}}
+            </div>
+        </td>
+    </tr>
+</table>
