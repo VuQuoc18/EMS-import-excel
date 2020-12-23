@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
-import { ImportPageComponent } from './import-excel-page.component';
-import { ImportPageRouter } from './import-excel-page-routing.module';
+import { ExcelDetailPageRouter } from './excel-detail-page-routing.module';
 import { ImportExcelListModule } from 'src/app/shared/components/list-detail-excel/list-detail-excel.module';
+import { ExcelDetailPageComponent } from './excel-detail-page.component';
 
 @NgModule({
-  declarations: [ImportPageComponent],
+  declarations: [ExcelDetailPageComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    ImportPageRouter,
+    ExcelDetailPageRouter,
     ImportExcelListModule
   ],
-  exports: [ImportPageComponent],
+  exports: [ExcelDetailPageComponent],
 })
-export class ImportPageModule {}
+export class ExcelDetailPageModule {}

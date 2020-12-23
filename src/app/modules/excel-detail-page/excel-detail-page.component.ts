@@ -6,11 +6,11 @@ import { Column } from 'src/app/store/models/column.i';
 
 import { NotificationStoreFacade } from '../../store/store-facades/notification.store-facade';
 @Component({
-  selector: 'brc-import-page',
-  templateUrl: './import-excel-page.component.html',
-  styleUrls: ['./import-excel-page.component.scss'],
+  selector: 'brc-excel-detail-page',
+  templateUrl: './brc-excel-detail-page.component.html',
+  styleUrls: ['./brc-excel-detail-page.component.scss'],
 })
-export class ImportPageComponent implements OnInit {
+export class ExcelDetailPageComponent implements OnInit {
   
   notification_columns: Column[] = [];
   notification_dataSource: Object[] = [];
@@ -34,7 +34,7 @@ export class ImportPageComponent implements OnInit {
     this.notification_dataSource = this.dataSource;
   }
   pageOnClickBtnAdd() {
-    this.router.navigateByUrl('import-excel/add');
+    this.router.navigateByUrl('excel-detail-page/add');
   }
   onSubmit() {
     

@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ImportPageComponent } from './import-excel-page.component';
+import { ExcelDetailPageComponent } from './excel-detail-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ImportPageComponent,
+    component: ExcelDetailPageComponent,
     children: [
       {
         path: '',
-        component: ImportPageComponent,
+        component: ExcelDetailPageComponent,
       },
     ],
   },
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ImportPageRouter {}
+export class ExcelDetailPageRouter {}
