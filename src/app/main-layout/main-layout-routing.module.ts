@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
     children: [
       {
         path: 'todo',
@@ -70,6 +70,13 @@ const routes: Routes = [
           import(
             '../modules/schedule-list-page/schedule-list-page.module'
           ).then((m) => m.ScheduleListPageModule),
+      },
+      {
+        path: 'poll/detail',
+        loadChildren: () =>
+          import(
+            '../modules/poll-detail-page/poll-detail-page.module'
+          ).then((m) => m.PollDetailPageModule),
       },
     ],
   },

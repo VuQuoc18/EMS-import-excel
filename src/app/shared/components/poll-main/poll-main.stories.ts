@@ -1,21 +1,20 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { AddTodoComponent } from './add-todo.component';
+import { PollMainComponent } from './poll-main.component';
 import { MaterialCustomModule } from '../../material-custom/material-custom.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AddTodoModule } from './add-todo.module';
+import { PollMainModule } from './poll-main.module';
 
-
-storiesOf('Pages/Add Todo', module)
+storiesOf('Pages/Poll', module)
     .addDecorator(withKnobs)
     .addDecorator(
         moduleMetadata({
-            imports: [AddTodoModule, BrowserAnimationsModule, MaterialCustomModule],
+            imports: [PollMainModule, BrowserAnimationsModule, MaterialCustomModule],
         })
     )
-    .add("Demo", () => ({
-        component: AddTodoComponent,
+    .add("Poll Main", () => ({
+        component: PollMainComponent,
         props: {
             CategoryArray: [
                 {
@@ -41,4 +40,3 @@ storiesOf('Pages/Add Todo', module)
 
         }
     }))
-   

@@ -11,8 +11,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginPageModule } from './modules/login-page/login-page.module';
 import { AddHeaderInterceptor } from './modules/login-page/token.interceptor';
 
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

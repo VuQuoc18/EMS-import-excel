@@ -29,7 +29,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/styles/base.scss"
+              "src/styles/base.scss",
+              "src/styles/boostrap.css"
             ],
             "scripts": []
           },
@@ -124,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ems-schedule-manager"
+    }
+  },
+  "defaultProject": "ems-schedule-manager",
+  "cli": {
+    "analytics": "bf6939f5-6d6f-4b87-8fa7-3178f30aa07e"
+  }
 }

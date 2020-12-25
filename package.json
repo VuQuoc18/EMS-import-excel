@@ -33,6 +33,7 @@
     "@ngrx/effects": "^9.2.0",
     "@ngrx/store": "^9.2.0",
     "angular-calendar": "^0.28.22",
+    "bootstrap": "^4.5.3",
     "date-fns": "^2.16.1",
     "multer": "^1.4.2",
     "ngx-scrollbar": "^7.3.0",

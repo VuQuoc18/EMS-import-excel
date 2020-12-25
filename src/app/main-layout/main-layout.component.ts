@@ -28,7 +28,7 @@ export class MainLayoutComponent implements OnInit {
       text: 'Schedule',
       link: '/schedule',
       icon: 'event',
-    },
+    }
   ];
   temp = false;
   reminder: ReminderNotification = {
