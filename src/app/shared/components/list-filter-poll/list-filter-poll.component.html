@@ -1,0 +1,48 @@
+<div class="filter-container">
+  <!-- <form [formGroup]="formOption"> -->
+  <h1 style="font-weight: bold; text-align: center;">Create Poll</h1>
+  <hr />
+  <div>
+    <brc-label [label]="labelQuestion" class="filter-label" style="width: 100%; margin-bottom: 10px;"></brc-label>
+    <input type="text" placeholder="_What's your poll question?" style="width: 100%; padding: 6px 0px;">
+  </div>
+  <br />
+
+  <div style="width: 100%;">
+    <brc-label [label]="labelExpiration" class="filter-label" style="width: 100%; margin-bottom: 10px;"></brc-label>
+    <brc-datetime-picker (getDay)="getFromDate($event)" (getHour)="getFromHour($event)"
+      (getMinute)="getFromMinute($event)"></brc-datetime-picker>
+  </div>
+  <br />
+
+  <div>
+    <input type="checkbox" name="checkMultipleAnswers" [(ngModel)]="checkMultipleAnswers">
+    <label for="checkMultipleAnswers" style="margin-left: 5px; font-size: initial; color: black;">Allow multiple poll
+      answers</label>
+  </div>
+
+  <br />
+  <div>
+    <div style="display: flex; flex-direction: column; width: 100%;">
+      <brc-label [label]="labelOption" class="filter-label"></brc-label>
+      <form [formGroup]="formOption">
+        <div *ngFor="let option of options; index as i" style="display: flex; flex-direction: row; margin-bottom: 10px;">
+          <input  style="width: 100%;">
+        </div>
+      </form>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+      <button (click)="addOption()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <label style="color: black; margin-top: 4px;">Add option</label>
+    </div>
+  </div>
+  <br />
+  <div>
+    <div style="width: 100%; margin: auto; text-align: center;">
+      <brc-button [configButton]="buttonSubmit" (click)="onSubmit()"></brc-button>
+    </div>
+  </div>
+  <!-- </form> -->
+</div>
